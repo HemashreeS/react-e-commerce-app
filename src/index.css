@@ -1,0 +1,203 @@
+/* =====================
+   GLOBAL STYLES
+===================== */
+
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --success: #22c55e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* =====================
+   NAVBAR
+===================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.cart-count {
+  font-size: 14px;
+  background: var(--primary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+/* =====================
+   LAYOUT
+===================== */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================
+   PRODUCTS GRID
+===================== */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+/* =====================
+   PRODUCT CARD
+===================== */
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  background: #f1f5f9;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 14px 4px;
+}
+
+.card p {
+  padding: 0 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.card button {
+  margin: 14px;
+  margin-top: auto;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.card button:hover {
+  background: var(--primary-dark);
+}
+
+.card button:active {
+  transform: scale(0.98);
+}
+
+/* =====================
+   CART
+===================== */
+
+.cart {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  height: fit-content;
+  position: sticky;
+  top: 96px;
+}
+
+.cart h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.cart p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item button {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  transform: scale(1.15);
+}
+
+/* =====================
+   LOADING / ERROR
+===================== */
+
+h2 {
+  padding: 40px;
+  text-align: center;
+}
